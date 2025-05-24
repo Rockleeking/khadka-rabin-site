@@ -1,4 +1,4 @@
-// Load personal data
+// Load personal data from data.json
 fetch('data.json')
   .then(res => res.json())
   .then(data => {
@@ -15,20 +15,20 @@ fetch('data.json')
     });
   });
 
-// Load projects
-fetch('projects.json')
+// Auto-fetch GitHub projects (public repos)
+fetch('https://api.github.com/users/Rockleeking/repos')
   .then(res => res.json())
-  .then(projects => {
+  .then(repos => {
     const container = document.getElementById('projects');
-    projects.forEach(p => {
+    repos.forEach(repo => {
       const col = document.createElement('div');
       col.className = 'col';
       col.innerHTML = `
         <div class="card h-100 shadow-sm">
           <div class="card-body">
-            <h5 class="card-title">${p.title}</h5>
-            <p class="card-text">${p.description}</p>
-            <a href="${p.url}" target="_blank" class="btn btn-primary">View Project</a>
+            <h5 class="card-title">${repo.name}</h5>
+            <p class="card-text">${repo.description || "No description provided."}</p>
+            <a href="${repo.html_url}" target="_blank" class="btn btn-primary">View on GitHub</a>
           </div>
         </div>`;
       container.appendChild(col);
