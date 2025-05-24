@@ -36,9 +36,21 @@ fetch('https://api.github.com/users/Rockleeking/repos')
   });
 
 // Dark mode toggle
+// Dark mode toggle
 const toggleDark = document.getElementById("toggleDark");
 toggleDark.addEventListener("click", () => {
   document.body.classList.toggle("bg-dark");
   document.body.classList.toggle("text-white");
+
+  document.querySelectorAll(".card").forEach(card => {
+    card.classList.toggle("bg-dark");
+    card.classList.toggle("text-light");
+  });
+
+  const navbar = document.querySelector(".navbar");
+  navbar.classList.toggle("navbar-dark");
+  navbar.classList.toggle("bg-dark");
+  navbar.classList.toggle("bg-primary"); // remove blue
 });
+
 
