@@ -127,17 +127,9 @@
       },
       body: JSON.stringify(jsonData),
     });
-
-    const result = await res.json();
-
-    if (result.success) {
       alert("Form sent successfully!");
       form.reset();
-    } else {
-      alert("Error: " + (result.error || "Unknown error"));
-    }
-
-    document.getElementById("response").textContent = result.message || result.error || "";
+   
   } catch (err) {
     alert("Network error: " + err.message);
   }
