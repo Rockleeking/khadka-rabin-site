@@ -1,1 +1,13 @@
+[
+  {
+    "title": "My Portfolio",
+    "description": "This very portfolio site showcasing my work and resume.",
+    "url": "https://khadka-rabin.com.np/"
+  },
+  {
+    "title": "Weather App",
+    "description": "A weather application using OpenWeather API and JavaScript.",
+    "url": "https://github.com/Rockleeking/weather-app"
+  }
+]
 
