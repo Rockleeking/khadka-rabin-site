@@ -20,4 +20,22 @@ Welcome to the source code of my personal website: [khadka-rabin.com.np](https:/
 - GitHub Pages + Cloudflare (for custom domain)
 
 ## 📂 Structure
+📁 khadka-rabin-site/
+├── index.html
+├── style.css
+├── script.js
+├── data.json
+├── resume.pdf
+└── assets/
+└── profile.jpg
+
+
+## 📬 Contact
+
+[LinkedIn Profile](https://www.linkedin.com/in/rabin-khadka-3467a9141)
+
+---
+
+Thanks for visiting! Feel free to fork or reuse this layout.
+
 
