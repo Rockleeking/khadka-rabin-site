@@ -34,3 +34,11 @@ fetch('https://api.github.com/users/Rockleeking/repos')
       container.appendChild(col);
     });
   });
+
+// Dark mode toggle
+const toggleDark = document.getElementById("toggleDark");
+toggleDark.addEventListener("click", () => {
+  document.body.classList.toggle("bg-dark");
+  document.body.classList.toggle("text-white");
+});
+
