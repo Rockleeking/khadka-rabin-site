@@ -124,9 +124,11 @@
       method: "POST",
       body: formData,
     });
+    alert("form sent");
 
     const result = await res.json();
     document.getElementById("response").textContent = result.message || result.error;
+    alert("form received");
 
     if (result.success) form.reset();
   });
