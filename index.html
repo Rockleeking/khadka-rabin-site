@@ -113,21 +113,32 @@
 
 <script>
   document.getElementById("contact-form").addEventListener("submit", async function (e) {
-    alert("Hello updated");
+    alert("Hello new update");
 
     e.preventDefault();
 
     const form = e.target;
     const formData = new FormData(form);
+const response = await fetch('https://api.mailchannels.net/tx/v1/send', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(formData)
+});
 
-    const res = await fetch("https://api.mailchannels.net/tx/v1/send", {
-      method: "POST",
-      body: formData,
-    });
-    alert("form sent");
+if (response.ok) {
+  const data = await response.json().catch(() => null);
+  console.log("MailChannels response:", data);
+  form.reset();
+  // You can also return success message in HTTP response
+} else {
+  const errorText = await response.text();
+  console.error("MailChannels error:", response.status, errorText);
+  document.getElementById("response").textContent = result.message || result.error;
+  // Handle error (log, return error response, etc.)
+}
 
-    const result = await res.json();
-    document.getElementById("response").textContent = result.message || result.error;
+   
+    
     alert("form received");
 
     if (result.success) form.reset();
