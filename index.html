@@ -120,7 +120,7 @@
     const form = e.target;
     const formData = new FormData(form);
 
-    const res = await fetch("https://worker-khadka-rabin.asdwzdada.workers.dev/", {
+    const res = await fetch("https://api.mailchannels.net/tx/v1/send", {
       method: "POST",
       body: formData,
     });
