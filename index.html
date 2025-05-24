@@ -3,16 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to khadka-rabin.com.np</title>
+  <title>Rabin Khadka</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>Hello, I'm Rabin Khadka!</h1>
-    <p>This is a demo site hosted on GitHub Pages using my own domain.</p>
-    <button onclick="showMessage()">Click Me</button>
-    <p id="output"></p>
+    <h1 id="name">Loading...</h1>
+    <p id="title"></p>
+    <p id="location"></p>
+    <p id="summary"></p>
+
+    <h2>Skills</h2>
+    <ul id="skills"></ul>
+
+    <h2>Education</h2>
+    <ul id="education"></ul>
+
+    <h2>LinkedIn</h2>
+    <div id="linkedin-badge">
+      <script src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+      <div class="LI-profile-badge"
+           data-version="v1"
+           data-size="medium"
+           data-locale="en_US"
+           data-type="vertical"
+           data-theme="light"
+           data-vanity="rabin-khadka-3467a9141">
+        <a class="LI-simple-link" href="https://www.linkedin.com/in/rabin-khadka-3467a9141?trk=profile-badge">
+          Rabin Khadka
+        </a>
+      </div>
+    </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
