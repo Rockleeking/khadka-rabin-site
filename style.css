@@ -1,71 +1,54 @@
-/* General Body Styling */
 body {
   font-family: 'Segoe UI', sans-serif;
-  padding-top: 60px; /* To avoid content from being under the navbar */
+  padding-top: 70px;
+  scroll-behavior: smooth;
 }
 
-/* Navbar Styling */
-.navbar {
-  z-index: 9999; /* Keep navbar on top of other content */
-}
-
-.navbar-brand {
-  font-weight: bold;
-}
-
-/* Sticky Header Styling */
-.profile-header {
-  padding-top: 60px;
-}
-
-.profile-header img {
-  transition: all 0.3s ease; /* Smooth transition for resizing the image */
-  width: 150px; /* Initial image size */
-}
-
-.profile-header h1 {
-  transition: all 0.3s ease; /* Smooth transition for resizing the name */
-  font-size: 2.5rem; /* Initial font size */
-}
-
-.profile-header p {
-  transition: all 0.3s ease; /* Smooth transition for resizing the title */
-  font-size: 1.25rem; /* Initial font size */
-}
-
-/* Sticky Behavior - When Scrolled */
-.sticky-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: #fff;
-  padding: 10px 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.sticky-header img {
-  width: 100px !important; /* Smaller image when scrolling */
-  height: 100px !important;
-}
-
-.sticky-header h1 {
-  font-size: 1.2rem !important; /* Smaller font size for name */
-}
-
-.sticky-header p {
-  font-size: 1rem !important; /* Smaller font size for title */
-}
-
-/* Style for h1 and h2 */
 h1, h2 {
   color: #2c3e50;
 }
 
-/* Skills Span Styling */
 #skills span {
   padding: 0.4em 0.75em;
   background-color: #0d6efd;
   color: white;
   border-radius: 20px;
   font-size: 0.9rem;
+}
+
+.hero-section {
+  height: 100vh;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.hero-img {
+  width: 150px;
+  height: 150px;
+  transition: all 0.3s ease;
+}
+
+.hero-section.shrink .hero-img {
+  width: 100px;
+  height: 100px;
+}
+
+.hero-section.shrink #name {
+  font-size: 1.5rem;
+}
+
+.hero-section.shrink #title {
+  font-size: 1rem;
+}
+
+#name {
+  font-size: 2.5rem;
+  transition: font-size 0.3s ease;
+}
+
+#title {
+  font-size: 1.25rem;
+  transition: font-size 0.3s ease;
 }
