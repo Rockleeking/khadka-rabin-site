@@ -54,3 +54,18 @@ toggleDark.addEventListener("click", () => {
 });
 
 
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('.profile-header');
+    const img = header.querySelector('img');
+    const name = header.querySelector('h1');
+    const title = header.querySelector('p');
+
+    if (window.scrollY > 100) {
+      // When scrolled down 100px, apply the smaller size
+      header.classList.add('sticky-header');
+    } else {
+      // Reset when at the top
+      header.classList.remove('sticky-header');
+    }
+  });
+
