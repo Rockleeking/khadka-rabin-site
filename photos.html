@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>iCloud Album Cast</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: white;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    button {
+      font-size: 22px;
+      padding: 16px 28px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <p>Tap below, then cast this tab 📺</p>
+
+    <button onclick="openAlbum()">
+      Open iCloud Album
+    </button>
+  </div>
+
+  <script>
+    function openAlbum() {
+      window.location.href =
+        "https://www.icloud.com/sharedalbum/#B2G532ODWIl5ZGl";
+    }
+  </script>
+</body>
+</html>
