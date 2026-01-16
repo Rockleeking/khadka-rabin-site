@@ -1,25 +1,70 @@
 {
   "name": "Rabin Khadka",
-  "title": "IT Professional | Web Enthusiast",
-  "location": "Australia",
-  "summary": "Passionate about technology, web development, and problem-solving.",
-  "experience": [
+  "location": "Hobart, TAS",
+  "summary": "Software Developer with 4+ years of experience building scalable applications using .NET, Azure, Java, and modern web technologies. Proven track record developing enterprise solutions for government and private sectors. Strong background in full-stack development, cloud platforms, database design, and API development. Passionate about leveraging cutting-edge technologies to solve complex problems and drive business outcomes.",
+  "overview": {
+    "experienceYears": 8
+  },
+  "workHistory": [
     {
-      "role": "IT Support Officer",
-      "company": "ABC Company",
-      "years": "2022 - Present"
+      "title": "Application Developer",
+      "company": "Sustainable Timber Tasmania",
+      "location": "Hobart, Tasmania",
+      "period": "07.2023 - 09.2025"
     },
     {
-      "role": "Junior Developer",
-      "company": "XYZ Tech",
-      "years": "2020 - 2022"
+      "title": "IT Support Officer",
+      "company": "Simple Cider",
+      "location": "Hobart, Tasmania",
+      "period": "02.2022 - 04.2022"
+    },
+    {
+      "title": "Web Developer",
+      "company": "G & D Developers Nepal",
+      "location": "Nepal",
+      "period": "04.2018 - 02.2019"
+    },
+    {
+      "title": "Information Technology Assistant",
+      "company": "DHL Express",
+      "location": "Nepal",
+      "period": "12.2017 - 04.2018"
+    }
+  ],
+  "education": [
+    {
+      "degree": "Master of Information Technology And Systems - Information And Computer Systems",
+      "institution": "University of Tasmania (UTAS)",
+      "location": "Tasmania, Australia",
+      "year": "06-2021"
+    },
+    {
+      "degree": "Bachelor in Information Management - Information Management",
+      "institution": "Shankerdev Campus",
+      "location": "Nepal",
+      "year": "01-2019"
     }
   ],
   "skills": [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "GitHub",
-    "Cloudflare"
+    "Problem-solving",
+    "Dependable and responsible",
+    "Flexible and adaptable",
+    "Attention to detail",
+    "Active listening",
+    "Organization and time management",
+    "Decision-making",
+    "Problem resolution",
+    "Applications development",
+    "Web application development",
+    "Verbal and written communication",
+    "Customer support"
+  ],
+  "projects": [
+    "Messaging API (Java JAX-RS): Built RESTful messaging service handling concurrent requests with optimized performance",
+    "4-Tier Enterprise Applications: Developed scalable web applications using Spring, Hibernate, JSF, and EJB technologies",
+    "Cloud-Based Tweet Generator: Deployed Java application on Nectar Cloud with automated scaling capabilities",
+    "AI Chatbot Application: Integrated Google Speech-to-Text, Natural Language Processing, and Location APIs",
+    "Research Publication Desktop App (C++): Built real-time embedded system for academic research management",
+    "Database Solutions: Designed and implemented complex database architectures using SQL Server, MySQL, and Oracle"
   ]
 }
