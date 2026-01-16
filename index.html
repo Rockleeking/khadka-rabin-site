@@ -13,6 +13,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+</style>
+
 
 </head>
 
@@ -32,7 +36,10 @@
       </div>
     </div>
   </div>
-  <button onclick="toggleDark()" aria-label="Toggle dark mode">🌙</button>
+  <button class="theme-toggle" onclick="toggleDark()" aria-label="Toggle dark mode">
+  🌙
+</button>
+
 
 </div>
 
@@ -130,7 +137,14 @@ function toggleDark() {
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init({ duration: 800, once: true });
+  document.getElementById("year").textContent = new Date().getFullYear();
+
 </script>
 
 </body>
+<footer>
+  © <span id="year"></span> Rabin Khadka · Built with ❤️
+</footer>
+
+
 </html>

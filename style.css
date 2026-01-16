@@ -131,3 +131,70 @@ button:hover, .btn:hover {
     height: 72px;
   }
 }
+
+/* ---------- POLISH ---------- */
+
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 18px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  background: var(--card);
+}
+
+/* Section divider */
+.section::before {
+  content: "";
+  display: block;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border), transparent);
+  margin-bottom: 24px;
+}
+
+/* Work timeline feel */
+#work .card {
+  position: relative;
+  padding-left: 24px;
+}
+
+#work .card::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 24px;
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+/* Subtle hover lift */
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+/* Footer */
+footer {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
