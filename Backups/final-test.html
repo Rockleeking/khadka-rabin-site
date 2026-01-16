@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rabin Khadka | Software Developer</title>
+  <meta name="description" content="Rabin Khadka – Software Developer with experience in .NET, Java, Azure, and modern web technologies.">
+  <meta name="keywords" content="Rabin Khadka, Software Developer, Australia, .NET, Java, Azure">
+  <meta name="author" content="Rabin Khadka">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Fonts & AOS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+  <style>html{scroll-behavior:smooth;}</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- HEADER -->
+  <div class="header">
+    <div class="profile">
+      <img src="profile.jpg" class="avatar" alt="Rabin Khadka">
+      <div>
+        <h1 id="name"></h1>
+        <div class="badge" id="location"></div>
+        <div class="actions">
+          <a class="btn" href="cv.pdf" download>Download CV</a>
+          <a class="btn" href="https://www.linkedin.com/in/rabin-khadka-3467a9141/" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <button class="theme-toggle" onclick="toggleDark()" aria-label="Toggle dark mode">🌙</button>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="section" data-aos="fade-up">
+    <h2>Summary</h2>
+    <p id="summary"></p>
+  </div>
+
+  <!-- OVERVIEW -->
+  <div class="section" data-aos="fade-up">
+    <h2>Overview</h2>
+    <div class="card">
+      <b id="years"></b> years of professional experience
+    </div>
+  </div>
+
+  <!-- WORK HISTORY -->
+  <div class="section" data-aos="fade-up">
+    <h2>Work History</h2>
+    <div id="work"></div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section" data-aos="fade-up">
+    <h2>Education</h2>
+    <div id="education"></div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section" data-aos="fade-up">
+    <h2>Skills</h2>
+    <div id="skills"></div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section" data-aos="fade-up">
+    <h2>Key Projects & Achievements</h2>
+    <div id="projects"></div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="section" data-aos="fade-up">
+    <button class="btn" onclick="openContact()">Contact me</button>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    © <span id="year"></span> Rabin Khadka · Built with ❤️
+  </footer>
+</div>
+
+<!-- CONTACT MODAL -->
+<div id="contactModal" style="display:none;">
+  <div class="card" style="max-width:400px;margin:100px auto;text-align:center;">
+    <h3>Contact Me</h3>
+    <p>Email: <b>your-email@example.com</b></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/rabin-khadka-3467a9141/" target="_blank">View Profile</a></p>
+    <button class="btn" onclick="closeContact()">Close</button>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 800, once: true });
+</script>
+<script>
+const el = id => document.getElementById(id);
+
+// Load JSON Data
+fetch("data.json")
+  .then(r => r.ok ? r.json() : Promise.reject("data.json not found"))
+  .then(data => {
+    el("name").textContent = data.name;
+    el("location").textContent = data.location;
+    el("summary").textContent = data.summary;
+    el("years").textContent = data.overview.experienceYears;
+
+    data.workHistory.forEach(w=>{
+      el("work").innerHTML+=`<div class="card" data-aos="fade-up">
+        <strong>${w.title}</strong><br>${w.company}<br>${w.location}<br><small>${w.period}</small>
+      </div>`;
+    });
+
+    data.education.forEach(e=>{
+      el("education").innerHTML+=`<div class="card" data-aos="fade-up">
+        <strong>${e.degree}</strong><br>${e.institution}<br>${e.location}<br>${e.year}
+      </div>`;
+    });
+
+    data.skills.forEach(s=>{
+      el("skills").innerHTML+=`<span class="tag">${s}</span>`;
+    });
+
+    data.projects.forEach(p=>{
+      el("projects").innerHTML+=`<div class="card" data-aos="fade-up">${p}</div>`;
+    });
+  }).catch(err=>console.error(err));
+
+// Dark Mode with preference
+if(localStorage.getItem("theme")==="dark") document.body.classList.add("dark");
+function toggleDark(){
+  document.body.classList.toggle("dark");
+  localStorage.setItem("theme",document.body.classList.contains("dark")?"dark":"light");
+}
+
+// Contact Modal
+function openContact(){el("contactModal").style.display="block";}
+function closeContact(){el("contactModal").style.display="none";}
+
+// Footer Year
+el("year").textContent = new Date().getFullYear();
+</script>
+
+<!-- Cloudflare Web Analytics -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"PASTE-YOUR-TOKEN-HERE"}'></script>
+
+</body>
+</html>

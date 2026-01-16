@@ -1,0 +1,231 @@
+:root {
+  --bg: #f8fafc;
+  --text: #0f172a;
+  --card: rgba(255,255,255,0.85);
+  --accent: #6366f1;
+  --border: rgba(0,0,0,0.08);
+}
+
+.dark {
+  --bg: #020617;
+  --text: #e5e7eb;
+  --card: rgba(15,23,42,0.9);
+  --border: rgba(255,255,255,0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 32px 20px;
+}
+
+/* ---------- HEADER ---------- */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  flex-shrink: 0;
+}
+
+.badge {
+  opacity: 0.7;
+  font-size: 14px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+/* ---------- BUTTONS ---------- */
+
+button, .btn {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+button:hover, .btn:hover {
+  opacity: 0.9;
+}
+
+/* ---------- SECTIONS ---------- */
+
+.section {
+  margin-top: 40px;
+}
+
+.section h2 {
+  margin-bottom: 16px;
+}
+
+/* ---------- CARDS ---------- */
+
+.card {
+  background: var(--card);
+  padding: 18px 20px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  margin-bottom: 16px;
+}
+
+/* ---------- TAGS ---------- */
+
+.tag {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  margin: 6px;
+  font-size: 14px;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 600px) {
+  .header {
+    align-items: flex-start;
+  }
+
+  .avatar {
+    width: 72px;
+    height: 72px;
+  }
+}
+
+/* ---------- POLISH ---------- */
+
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 18px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  background: var(--card);
+}
+
+/* Section divider */
+.section::before {
+  content: "";
+  display: block;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border), transparent);
+  margin-bottom: 24px;
+}
+
+/* Work timeline feel */
+#work .card {
+  position: relative;
+  padding-left: 24px;
+}
+
+#work .card::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 24px;
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+/* Subtle hover lift */
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+/* Footer */
+footer {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+
+/* Sticky header */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  padding: 16px 0;
+}
+
+
+/* Timeline line */
+#work {
+  position: relative;
+  padding-left: 24px;
+}
+
+#work::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--accent),
+    transparent
+  );
+}
+
