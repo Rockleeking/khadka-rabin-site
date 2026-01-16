@@ -1,53 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
   <title>Rabin Khadka</title>
-  <link rel="stylesheet" href="style.css">
-  <script>
-fetch("data.json")
-  .then(r => {
-    if (!r.ok) {
-      console.error("Cannot load data.json:", r.status);
-      return;
-    }
-    return r.json();
-  })
-  .then(data => {
-    if (!data) return;
-    document.getElementById("name").innerText = data.name;
-    document.getElementById("location").innerText = data.location;
-    document.getElementById("summary").innerText = data.summary;
-    document.getElementById("years").innerText = data.overview.experienceYears;
-
-    let workHtml = "";
-    data.workHistory.forEach(w => {
-      workHtml += `<div class="card"><b>${w.title}</b><br>${w.company}<br>${w.location}<br><small>${w.period}</small></div>`;
-    });
-    document.getElementById("work").innerHTML = workHtml;
-
-    let eduHtml = "";
-    data.education.forEach(e => {
-      eduHtml += `<div class="card"><b>${e.degree}</b><br>${e.institution}<br>${e.location}<br>${e.year}</div>`;
-    });
-    document.getElementById("education").innerHTML = eduHtml;
-
-    let skillsHtml = "";
-    data.skills.forEach(s => {
-      skillsHtml += `<span class="tag">${s}</span>`;
-    });
-    document.getElementById("skills").innerHTML = skillsHtml;
-
-    let projHtml = "";
-    data.projects.forEach(p => {
-      projHtml += `<div class="card">${p}</div>`;
-    });
-    document.getElementById("projects").innerHTML = projHtml;
-  })
-  .catch(err => {
-    console.error("Fetch error:", err);
-  });
-</script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
@@ -98,28 +55,52 @@ fetch("data.json")
 </div>
 
 <script>
-fetch("data.json").then(r => r.json()).then(data => {
-  name.innerText = data.name;
-  location.innerText = data.location;
-  summary.innerText = data.summary;
-  years.innerText = data.overview.experienceYears;
+const el = id => document.getElementById(id);
 
-  data.workHistory.forEach(w =>
-    work.innerHTML += `<div class="card"><b>${w.title}</b><br>${w.company}<br>${w.location}<br><small>${w.period}</small></div>`
-  );
+fetch("data.json")
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("data.json not found");
+    }
+    return response.json();
+  })
+  .then(data => {
+    el("name").textContent = data.name;
+    el("location").textContent = data.location;
+    el("summary").textContent = data.summary;
+    el("years").textContent = data.overview.experienceYears;
 
-  data.education.forEach(e =>
-    education.innerHTML += `<div class="card"><b>${e.degree}</b><br>${e.institution}<br>${e.location}<br>${e.year}</div>`
-  );
+    data.workHistory.forEach(w => {
+      el("work").innerHTML += `
+        <div class="card">
+          <strong>${w.title}</strong><br>
+          ${w.company}<br>
+          ${w.location}<br>
+          <small>${w.period}</small>
+        </div>`;
+    });
 
-  data.skills.forEach(s =>
-    skills.innerHTML += `<span class="tag">${s}</span>`
-  );
+    data.education.forEach(e => {
+      el("education").innerHTML += `
+        <div class="card">
+          <strong>${e.degree}</strong><br>
+          ${e.institution}<br>
+          ${e.location}<br>
+          ${e.year}
+        </div>`;
+    });
 
-  data.projects.forEach(p =>
-    projects.innerHTML += `<div class="card">${p}</div>`
-  );
-});
+    data.skills.forEach(s => {
+      el("skills").innerHTML += `<span class="tag">${s}</span>`;
+    });
+
+    data.projects.forEach(p => {
+      el("projects").innerHTML += `<div class="card">${p}</div>`;
+    });
+  })
+  .catch(err => {
+    console.error(err);
+  });
 
 function toggleDark() {
   document.body.classList.toggle("dark");
