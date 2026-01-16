@@ -1,0 +1,25 @@
+{
+  "name": "Rabin Khadka",
+  "title": "IT Professional | Web Enthusiast",
+  "location": "Australia",
+  "summary": "Passionate about technology, web development, and problem-solving.",
+  "experience": [
+    {
+      "role": "IT Support Officer",
+      "company": "ABC Company",
+      "years": "2022 - Present"
+    },
+    {
+      "role": "Junior Developer",
+      "company": "XYZ Tech",
+      "years": "2020 - 2022"
+    }
+  ],
+  "skills": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "GitHub",
+    "Cloudflare"
+  ]
+}
