@@ -2,20 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Rabin Khadka</title>
+  <title>Rabin Khadka | Software Developer</title>
+  <meta name="description" content="Rabin Khadka – Software Developer with experience in .NET, Java, Azure, and modern web technologies." />
+  <meta name="keywords" content="Rabin Khadka, Software Developer, Australia, .NET, Java, Azure" />
+  <meta name="author" content="Rabin Khadka" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
 </head>
+
 <body>
 
 <div class="container">
   <div class="header">
+    <div class="header">
+  <div class="profile">
+    <img src="profile.jpg" class="avatar" alt="Rabin Khadka" />
     <div>
       <h1 id="name"></h1>
       <div class="badge" id="location"></div>
+      <div class="actions">
+        <a class="btn" href="cv.pdf" download>Download CV</a>
+        <a class="btn" href="https://www.linkedin.com/in/rabin-khadka-3467a9141/" target="_blank">LinkedIn</a>
+      </div>
     </div>
-    <button onclick="toggleDark()">Dark Mode</button>
   </div>
+  <button onclick="toggleDark()">🌙</button>
+</div>
+
 
   <div class="section">
     <h2>Summary</h2>
@@ -105,6 +124,11 @@ fetch("data.json")
 function toggleDark() {
   document.body.classList.toggle("dark");
 }
+
+</script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 800, once: true });
 </script>
 
 </body>
