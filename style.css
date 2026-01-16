@@ -1,19 +1,25 @@
 :root {
-  --bg: #f5f7fb;
-  --text: #111;
-  --card: #ffffff;
-  --accent: #4f46e5;
+  --bg: #f8fafc;
+  --text: #0f172a;
+  --card: rgba(255,255,255,0.85);
+  --accent: #6366f1;
+  --border: rgba(0,0,0,0.08);
 }
 
 .dark {
-  --bg: #0f172a;
+  --bg: #020617;
   --text: #e5e7eb;
-  --card: #1e293b;
+  --card: rgba(15,23,42,0.9);
+  --border: rgba(255,255,255,0.08);
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
 }
@@ -21,47 +27,107 @@ body {
 .container {
   max-width: 900px;
   margin: auto;
-  padding: 30px;
+  padding: 32px 20px;
 }
+
+/* ---------- HEADER ---------- */
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
 }
 
-h1 {
-  margin-bottom: 5px;
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
-.section {
-  margin-top: 30px;
-}
-
-.card {
-  background: var(--card);
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 15px;
+.avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  flex-shrink: 0;
 }
 
 .badge {
-  color: #6b7280;
+  opacity: 0.7;
+  font-size: 14px;
 }
 
-button {
-  padding: 8px 12px;
-  border: none;
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+/* ---------- BUTTONS ---------- */
+
+button, .btn {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
   background: var(--accent);
   color: white;
-  border-radius: 6px;
+  font-weight: 600;
   cursor: pointer;
+  text-decoration: none;
+  font-size: 14px;
 }
+
+button:hover, .btn:hover {
+  opacity: 0.9;
+}
+
+/* ---------- SECTIONS ---------- */
+
+.section {
+  margin-top: 40px;
+}
+
+.section h2 {
+  margin-bottom: 16px;
+}
+
+/* ---------- CARDS ---------- */
+
+.card {
+  background: var(--card);
+  padding: 18px 20px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  margin-bottom: 16px;
+}
+
+/* ---------- TAGS ---------- */
 
 .tag {
   display: inline-block;
+  padding: 8px 14px;
+  border-radius: 999px;
   background: var(--card);
-  padding: 6px 10px;
-  margin: 5px;
-  border-radius: 20px;
+  border: 1px solid var(--border);
+  margin: 6px;
+  font-size: 14px;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 600px) {
+  .header {
+    align-items: flex-start;
+  }
+
+  .avatar {
+    width: 72px;
+    height: 72px;
+  }
 }
